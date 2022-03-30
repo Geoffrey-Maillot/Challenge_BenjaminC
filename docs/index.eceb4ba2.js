@@ -1,0 +1,2 @@
+const img=document.getElementById("img"),largeCircle=document.getElementById("large"),smallCircle=document.getElementById("small"),parralax=e=>{const t=window.innerWidth/2,l=window.innerHeight/2,n=e.clientX-t,r=e.clientY-l;smallCircle.style.transform=`translate(${0-n/10}%, ${0-r/10}%)`,img.style.transform=`translate(${0-n/200}%, ${0-r/200}%)`,largeCircle.style.transform=`translate(${0-n/300}%, ${0-r/300}%)`};document.addEventListener("mousemove",parralax);
+//# sourceMappingURL=index.eceb4ba2.js.map
