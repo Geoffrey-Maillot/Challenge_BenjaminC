@@ -1,0 +1,233 @@
+@use '../styles/colors';
+
+/*------------------------------
+        ANIMATIONS START
+-------------------------------*/
+
+@keyframes slide {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/*------------------------------
+        ANIMATIONS END
+-------------------------------*/
+
+body {
+  width: 100%;
+  height: 100vh;
+  padding: 50px;
+  background-color: colors.$primary;
+  color: colors.$secondary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'gtfr';
+}
+
+a {
+  text-decoration: underline;
+  font-size: 1.2rem;
+  max-width: 400px;
+}
+
+.content {
+  border: 7px solid colors.$secondary;
+  width: 100%;
+  max-width: 1344px;
+  overflow: hidden;
+}
+
+/*------------------------------
+        BANNERS START
+-------------------------------*/
+
+.banner {
+  width: 100%;
+  overflow: hidden;
+}
+
+.banner div {
+  animation: slide 25s linear infinite both;
+}
+
+.banner-one div {
+  width: max-content;
+  overflow: hidden;
+}
+
+.banner-one div span {
+  font-size: 8.5em;
+  width: max-content;
+  display: inline-block;
+  margin: 0 30px;
+  font-family: 'gtfxebl';
+
+  &:nth-child(odd) {
+    -webkit-text-stroke: 2px colors.$secondary;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.banner-two {
+  border-top: 7px solid colors.$secondary;
+  border-bottom: 7px solid colors.$secondary;
+  font-family: 'gtfxebo';
+  padding: 5px 0;
+}
+
+.banner-two div {
+  width: max-content;
+  overflow: hidden;
+  animation-direction: reverse;
+  animation-duration: 50s !important;
+}
+
+.banner-two div span {
+  font-size: 2.8em;
+  width: max-content;
+  display: inline-block;
+  margin: 0 30px;
+
+  &:nth-child(odd) {
+    -webkit-text-stroke: 1px colors.$secondary;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/*------------------------------
+        BANNERS END
+-------------------------------*/
+
+/*------------------------------
+        MAIN START
+-------------------------------*/
+
+.main {
+  width: 100%;
+  padding: 50px 50px 0 20px;
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: 3fr 2fr;
+  justify-items: center;
+  justify-content: center;
+}
+
+/*
+  LEFT
+*/
+
+.left {
+  position: relative;
+}
+
+.round-large {
+  width: 35vw;
+  height: 35vw;
+  max-width: 500px;
+  max-height: 500px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+
+  border-radius: 50%;
+  background-color: colors.$secondary;
+}
+
+.round-small {
+  background: colors.$secondary;
+  width: 2.5vw;
+  height: 2.5vw;
+  max-width: 42px;
+  max-height: 42px;
+  border-radius: 50%;
+  position: absolute;
+  top: 74%;
+  left: 57%;
+  z-index: 10;
+}
+
+.img {
+  width: 100%;
+  position: relative;
+  z-index: 5;
+}
+
+/*
+  RIGHT
+*/
+
+.right {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: min-content;
+  grid-gap: 20px;
+  align-content: center;
+}
+
+.right p {
+  text-align: left;
+  width: 100%;
+  max-width: 400px;
+  font-size: 1.2em;
+}
+
+.contact {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.contact span {
+  width: 35px;
+  height: 25px;
+  fill: colors.$secondary;
+  margin-right: 15px;
+}
+
+/*------------------------------
+        MAIN END
+-------------------------------*/
+
+/*------------------------------
+      MEDIA QUERRIES
+-------------------------------*/
+
+// 1024px
+@media screen and (max-width: 1025px) {
+  .main {
+    padding: 20px;
+  }
+
+  .left {
+    grid-column: span 2;
+  }
+  .right {
+    grid-column: span 2;
+  }
+
+  .round-large {
+    width: 45vw;
+    height: 45vw;
+    left: 6%;
+  }
+  .round-small {
+    width: 4vw;
+    height: 4vw;
+  }
+}
+
+// 410px
+@media screen and (max-width: 410px) {
+  .round-large {
+    width: 40vw;
+    height: 40vw;
+    left: 6%;
+  }
+}
